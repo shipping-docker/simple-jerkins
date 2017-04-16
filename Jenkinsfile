@@ -16,8 +16,8 @@ node('master') {
             // ansible-playbook -i ./ansible/hosts ./ansible/deploy.yml
             sh "echo 'WE ARE DEPLOYING'"
         }
-    } catch {
-
+    } catch(error) {
+        throw error
     } finally {
 
     }
