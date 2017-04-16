@@ -6,6 +6,8 @@ node('master') {
             checkout scm
 
             sh "composer install"
+            sh "cp .env.example .env"
+            sh "artisan key:generate"
         }
 
         stage('test') {
